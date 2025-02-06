@@ -13,39 +13,39 @@
         <div class="container">
             <h1 class="logo">Agora</h1>
             <div class="nav-links">
-                <a href="#" class="nav-link">Wikis</a>
-                <a href="#" class="nav-link">Discussions</a>
-                <a href="#" class="nav-link">Workspaces</a>
+                <a href="#wikis" class="nav-link">Wikis</a>
+                <a href="#discussions" class="nav-link">Discussions</a>
+                <a href="#workspaces" class="nav-link">Workspaces</a>
             </div>
         </div>
     </nav>
 
     <main class="container main-grid">
-        <div class="content-area">
-            <div class="card">
-                <h2>Featured Wiki</h2>
-                <p class="text-body">Collaboratively edited resource on climate science...</p>
-                <a href="#" class="button">Edit Wiki</a>
-            </div>
+        <!-- New Post Form -->
+        <div class="card" id="new-post">
+            <h2>Start a Discussion</h2>
+            <form id="new-post-form">
+                <input type="text" name="title" placeholder="Discussion Title" required>
+                <textarea name="content" placeholder="Your thoughts..." required></textarea>
+                <button type="submit" class="button">Post</button>
+            </form>
+        </div>
 
+        <!-- Dynamic Content Sections -->
+        <section id="discussions" class="content-section">
             <div class="card">
                 <h2>Recent Discussions</h2>
                 <div class="discussion-preview">
                     <h3>Ethics of AI Governance</h3>
+                    <button class="upvote-btn">
+                        <span class="vote-count">0</span> ▲
+                    </button>
                     <p class="text-meta">Posted in Philosophy Hub • 42 comments</p>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <aside class="sidebar">
-            <div class="card">
-                <h2>Active Workspaces</h2>
-                <div class="workspace-item">
-                    <h3>Open Source Initiative</h3>
-                    <p class="text-meta">124 participants • Updated 2h ago</p>
-                </div>
-            </div>
-        </aside>
+        <!-- Add similar sections for #wikis and #workspaces -->
     </main>
 </body>
 </html>
