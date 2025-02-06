@@ -135,3 +135,37 @@ h3 { font-size: 1.5rem; }
         --border: #4A5568;
     }
 }
+
+.dark-mode {
+    --primary-text: #E2E8F0;
+    --secondary-text: #CBD5E0;
+    --card-bg: #2D3748;
+    --page-bg: #1A202C;
+    --border: #4A5568;
+}
+
+.upvote-btn {
+    background: none;
+    border: 1px solid var(--border);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#new-post-form input,
+#new-post-form textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+}
+
+.content-section {
+    display: none;
+}
+
+.content-section:first-of-type {
+    display: block;
+}
