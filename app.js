@@ -39,3 +39,40 @@ document.addEventListener('DOMContentLoaded', () => {
         e.target.reset();
     });
 });
+
+// Local Storage Integration
+function saveToStorage(key, data) {
+    localStorage.setItem(key, JSON.stringify(data));
+}
+
+function loadFromStorage(key) {
+    return JSON.parse(localStorage.getItem(key)) || [];
+}
+
+// Example usage for discussions
+const discussions = loadFromStorage('discussions');
+
+document.getElementById('new-post-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const newPost = {
+        title: formData.get('title'),
+        content: formData.get('content'),
+        timestamp: new Date().toISOString()
+    };
+    
+    discussions.push(newPost);
+    saveToStorage('discussions', discussions);
+    renderDiscussions();
+});
+
+function renderDiscussions() {
+    const container = document.getElementById('discussions');
+    container.innerHTML = discussions.map(post => `
+        <div class="card">
+            <h3>${post.title}</h3>
+            <p>${post.content}</p>
+            <p class="text-meta">${new Date(post.timestamp).toLocaleString()}</p>
+        </div>
+    `).join('');
+}
